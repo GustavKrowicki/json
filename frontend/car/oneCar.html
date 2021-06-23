@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../headerfooter.css">
+    <link rel="stylesheet" href="../oneCar.css">
+    <script src="../oneCar.js"> </script>
+
+</head>
+<body>
+
+
+ <!-- HEADER-->
+ <header class="header">
+    <a href=index.html><img src="../logo.png" alt="motor-depotets nye logo" class="logo"></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+    <li><a href="newcars.html">Nye Biler</a></li>
+    <li><a href="usedcars.html">Brugte Biler</a></li>
+    <li><a href="businesscars.html">Erhversbiler</a></li>
+    <li><a href="værksted.html">Værksted</a></li>
+    <li><a href="aboutus.html">Om Os</a></li>
+    </ul>
+   <div class="header-image-section">
+     <img src="../opel-header.png" alt="opel logo" class="header-image">
+     <img src="../mitsubishi-header.png" alt="opel logo" class="header-image">
+     <img src="../suzuki-header.png" alt="opel logo" class="header-image">
+   </div>
+  
+  </header>
+  
+
+
+
+ <!--SLIDESHOW-->
+ <div class="flexbox">
+   <div class="inner-flex">
+    <div class="slideshow-container" id="slideshow-container">
+
+      
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+        <div id="navImageCont" style="text-align:center">
+           
+          </div>
+  
+        </div>
+    
+
+    <!-- CAR INFO SECTION-->
+    <div class="inner-flexbox">
+    <h1 class="car-header" id="modelh1"></h1>
+
+    <table class="car-table">
+        <tr>
+          <td class="title background-color">Brændstoftype</td>
+          <td class="info background-color" id="braend"></td>
+      </tr>
+    
+      <tr>
+        <td class="title">Kilometer</td>
+        <td id="km" class="info"></td>
+    </tr>
+    
+    <tr>
+      <td class="title background-color">1. reg dato</td>
+      <td class="info background-color" id="reg"></td>
+    </tr>
+
+    <tr>
+        <td class="title">Farve</td>
+        <td class="info" id="farve"></td>
+    </tr>
+  
+    <tr>
+      <td class="title background-color">Døre</td>
+      <td class="info background-color" id="doors"></td>
+  </tr>
+  
+  <tr>
+    <td class="title">Variant</td>
+    <td class="info" id="model"></td>
+  </tr>
+
+  <tr>
+    <td class="title background-color">Type</td>
+    <td class="info background-color" id="type"></td>
+  </tr>
+
+  <tr>
+    <td class="title">Pris</td>
+    <td class="info" id="price"></td>
+  </tr>
+
+    </table>
+    </div>
+</div>
+
+<!-- END TEXT-->
+<div class="end-text-section">
+<h2 class="end-text-header">På udkig efter en brugt bil?</h2>
+<div class="end-text-flexbox">
+<p class="end-text>">Hos Motor-Depotet har vi i mere end 70 år beskæftiget os med salg af motorkøretøjer og derfor kan du trygt placere din tillid hos os.<br><br>
+    Vi tilbyder blandt andet rentefri finansiering, fordelagtige serviceaftaler og et dækhotel til dine sommer- og vinterdæk.<br><br>
+    Du har mulighed for, at trygt og sikkert komme forbi og tage en prøvetur - i blandt andet den bil du ser her!<br><br>
+    Hos Motor-Depotet tager vi også meget gerne i mod din brugte bil i bytte og sælger den videre, så du ikke skal tænke på det<br><br>
+    Hvis behovet skulle være til det, er du meget velkommen til at ringe til en salgsansvarlig og booke en prøvetur på <a href="tel:+4733378901" class="tel">+45 41 88 32 00</a> og så stiller vi bilen klar til dig - afsprittet og med brændstof i tanken.<br><br> 
+    Du må også hjertens gerne ringe hvis du generelt har nogle spørgsmål. Vi håber at høre fra dig.
+    </p>
+<img src="../saelger.jpeg" alt="bilsælger hos motordepotet" class="end-image">
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+ <!--FOOTER-->
+ <footer class="footer">
+    <div class="footer-flexbox">
+    <div class="inner-flexbox">
+    <h3 class="footer-header">Kontakt vores afdelinger</h3>
+    <table class="table">
+    <tr>
+      <td class="days">Hovednummer</td>
+      <td class="hours"><a href="tel:+4733378901" class="tel">+45 86 28 24 00</a></td>
+  </tr>
+  
+  <tr>
+    <td class="days">Salgsafdeling</td>
+    <td class="hours"><a href="tel:+4733378901" class="tel">+45 41 88 32 00</a></td>
+  </tr>
+  
+  <tr>
+  <td class="days">Værksted</td>
+  <td class="hours"><a href="tel:+4733378901" class="tel">+45 41 88 32 30</a></td>
+  </tr>
+  
+  </table>
+  </div>
+  <div class="inner-flexbox">
+    <address>
+      Motor Depotet A/S<br>
+      Hasselager Allé 1, 8260, Viby J<br>
+      <a href="mailto:info@motor-depotet.dk">info@motor-depotet.dk</a><br>
+      CVR 10945445<br>
+      <a href="https://www.facebook.com/motordepotetviby">Synes godt om</a>
+    </address>
+  </div>
+  </div>  
+  <div class="inner-flexbox">
+    <h3 class="footer-header">Åbningstider</h3>
+  <table class="table">
+    <tfoot>
+      <tr>
+        <td class="theader">Salgsafdeling</td>
+      </tr>
+        <tr>
+            <td class="days">Mandag-Fredag</td>
+            <td class="hours">8.30 - 17.30</td>
+        </tr>
+        <tr>
+          <td class="days">Lørdag</td>
+          <td class="hours">Lukket</td>
+      </tr>
+      <tr>
+        <td class="days">Søndag</td>
+        <td class="hours">11.00-16.00</td>
+    </tr>
+    <tr>
+  
+      <td class="theader">Værksted</td>
+    </tr>
+      <tr>
+          <td class="days">Mandag-Tirsdag</td>
+          <td class="hours">7.30 - 16.00</td>
+      </tr>
+      <tr>
+        <td class="days">Onsdag-Fredag</td>
+        <td class="hours">7.30-15.00</td>
+    </tr>
+    <tr>
+      <td class="days">Lørdag-Søndag</td>
+      <td class="hours">Lukket</td>
+  </tr></table></div>
+  </footer>
+
+    <script>
+
+    </script>
+</body>
+</html>
