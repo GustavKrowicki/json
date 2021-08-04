@@ -26,6 +26,7 @@ xhttp.onreadystatechange = function() {
     document.getElementById("modelh1").innerText = car.Model + ' ' + car.Variant
     document.getElementById("braend").innerText = car.Propellant
     document.getElementById("km").innerText = car.Mileage
+    document.getElementById("farve").innerText = car.Color
     document.getElementById("reg").innerText = car.RegistrationDate
     document.getElementById("doors").innerText = car.NumberOfDoors
     document.getElementById("model").innerText = car.Model

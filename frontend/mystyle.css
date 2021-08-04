@@ -51,6 +51,7 @@ max-width: fit-content;
   .car_img{
       width: 100%;
       margin: 0 auto;
+      min-width: 180px;
   }
   
   .myUL {
