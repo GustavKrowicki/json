@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSON Sandbox</title>
+    <link href="mystyle.css" rel="stylesheet">
+    <script src="usedcars.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../headerfooter.css">
+  </head>
+  <body>
+    
+ <!-- HEADER-->
+ <header class="header">
+ <img src="../opel-header.png" alt="motor-depotets nye logo" class="logo">
+  <input class="menu-btn" type="checkbox" id="menu-btn"/>
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+  <li><a href="newcars.html">Nye Biler</a></li>
+  <li><a href="usedcars.html">Brugte Biler</a></li>
+  <li><a href="businesscars.html">Erhversbiler</a></li>
+  <li><a href="værksted.html">Værksted</a></li>
+  <li><a href="aboutus.html">Om Os</a></li>
+  </ul>
+ <div class="header-image-section">
+   <img src="../opel-header.png" alt="opel logo" class="header-image">
+   <img src="../mitsubishi-header.png" alt="opel logo" class="header-image">
+   <img src="../suzuki-header.png" alt="opel logo" class="header-image">
+ </div>
+
+</header>
+
+
+
+    <ul id="people"></ul>
+    <div class="form-section">
+      <h2 class="search-header">Søg efter vores udvalg af brugte biler</h2>
+      <input type="text" id="myInput" class="filter" onkeyup="searchCar()" placeholder="Søg efter brugte biler...." title="Type in a name">
+    </div>
+
+    <div id="root"></div>
+
+     <!--FOOTER-->
+ <footer class="footer">
+  <div class="footer-flexbox">
+  <div class="inner-flexbox">
+  <h3 class="footer-header">Kontakt vores afdelinger</h3>
+  <table class="table">
+  <tr>
+    <td class="days">Hovednummer</td>
+    <td class="hours"><a href="tel:+4733378901" class="tel">+45 86 28 24 00</a></td>
+</tr>
+
+<tr>
+  <td class="days">Salgsafdeling</td>
+  <td class="hours"><a href="tel:+4733378901" class="tel">+45 41 88 32 00</a></td>
+</tr>
+
+<tr>
+<td class="days">Værksted</td>
+<td class="hours"><a href="tel:+4733378901" class="tel">+45 41 88 32 30</a></td>
+</tr>
+
+</table>
+</div>
+<div class="inner-flexbox">
+  <address>
+    Motor Depotet A/S<br>
+    Hasselager Allé 1, 8260, Viby J<br>
+    <a href="mailto:info@motor-depotet.dk">info@motor-depotet.dk</a><br>
+    CVR 10945445<br>
+    <a href="https://www.facebook.com/motordepotetviby">Synes godt om</a>
+  </address>
+</div>
+</div>  
+<div class="inner-flexbox">
+  <h3 class="footer-header">Åbningstider</h3>
+<table class="table">
+  <tfoot>
+    <tr>
+      <td class="theader">Salgsafdeling</td>
+    </tr>
+      <tr>
+          <td class="days">Mandag-Fredag</td>
+          <td class="hours">8.30 - 17.30</td>
+      </tr>
+      <tr>
+        <td class="days">Lørdag</td>
+        <td class="hours">Lukket</td>
+    </tr>
+    <tr>
+      <td class="days">Søndag</td>
+      <td class="hours">11.00-16.00</td>
+  </tr>
+  <tr>
+
+    <td class="theader">Værksted</td>
+  </tr>
+    <tr>
+        <td class="days">Mandag-Tirsdag</td>
+        <td class="hours">7.30 - 16.00</td>
+    </tr>
+    <tr>
+      <td class="days">Onsdag-Fredag</td>
+      <td class="hours">7.30-15.00</td>
+  </tr>
+  <tr>
+    <td class="days">Lørdag-Søndag</td>
+    <td class="hours">Lukket</td>
+</tr></table></div>
+</footer>
+    <script>
+
+
+      const app = document.getElementById('root')
+
+
+
+const container = document.createElement('div')
+container.setAttribute('class', 'car-gallery')
+
+app.appendChild(container)
+
+
+
+
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(xhttp.responseText);
+            var people = response.Vehicles;
+
+            
+          people.forEach((people) =>{
+            
+            const link = document.createElement("a")
+            link.setAttribute('class', 'gallery-inner-flexbox')
+            link.setAttribute('href', './oneCar.html#' + people.Id)
+            link.setAttribute('target', '_blank')
+
+            const card = document.createElement('div')
+
+            const ul = document.createElement('ul')
+            ul.setAttribute('class', 'myUl')
+
+     
+            const make = document.createElement('li')
+            make.textContent = "Mærke  " +`${people.Make}`
+            make.setAttribute('class', 'carList')
+
+            const year = document.createElement('li')
+            year.textContent ="Årgang  " + `${people.Year}`
+
+            const model = document.createElement('li')
+            model.textContent = "Model  " + `${people.Model}`
+
+
+            const regDate = document.createElement('li')
+            regDate.textContent = "1. reg  " + `${people.RegistrationDate}`
+
+            const kilometer = document.createElement('li')
+            kilometer.textContent = "km  " + `${people.Mileage}`
+
+            const braendstof = document.createElement('li')
+            braendstof.textContent = "Brændstof  " + `${people.Propellant}`
+
+            const price = document.createElement('li')
+            price.textContent = "pris  " + `${people.Price}` + "   kr."
+
+            const img = document.createElement('img')
+            img.setAttribute('class', "car_img")
+            if (people.Pictures.length === 0) {
+              img.src = "replacement.jpeg"
+            }else
+            img.src = `${people.Pictures[0]}`
+
+
+            container.appendChild(link)
+            link.appendChild(card)
+            
+            card.appendChild(img)
+            card.appendChild(ul)
+         
+            card.appendChild(make)
+            card.appendChild(year)
+            card.appendChild(regDate)
+            card.appendChild(kilometer)
+            card.appendChild(model)
+            card.appendChild(braendstof)
+            card.appendChild(price)
+           
+            
+
+
+          })
+          }
+      };
+      xhttp.open("GET", "brugt.json", true);
+      xhttp.send();
+
+    </script>
+  </body>
+</html>
